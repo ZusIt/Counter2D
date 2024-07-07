@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: cd929ee5358a65845b21222512d2d368
+  productGUID: 61e07e1b4e7fb714db7d24fa97cf1976
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -904,10 +904,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5c82b601-0abc-4e7b-aef9-de3d35543e53
+  cloudProjectId: 46f1f319-87fe-4136-a6f1-d543ff2e04ff
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Counter2D 2024-07-07_16-08-59
+  projectName: Counter2D
   organizationId: zusitgd
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
