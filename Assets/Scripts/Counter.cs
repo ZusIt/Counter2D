@@ -1,23 +1,18 @@
 using System.Collections;
-using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Counter : MonoBehaviour
 {
     [SerializeField] private float _waitInSeconds = 0.5f;
 
-    [SerializeField] private Text _countText;
-
-    private int _count = 0;
+    public int Count { get; private set; }
 
     private bool _isCounting = false;
 
-    void Start()
-    {
-        _countText.text = _count.ToString();
-    }
+    public event Action CountViewing;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,16 +23,15 @@ public class Counter : MonoBehaviour
             else
                 StopCoroutine(CountUp());
         }
+        
+        CountViewing?.Invoke();
     }
 
-    IEnumerator CountUp()
+    private IEnumerator CountUp()
     {
         while (_isCounting)
         {
-            _count++;
-
-            _countText.text = _count.ToString();
-
+            Count++;
             yield return new WaitForSeconds(_waitInSeconds);
         }
     }
