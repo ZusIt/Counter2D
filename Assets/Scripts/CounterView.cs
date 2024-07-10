@@ -19,7 +19,6 @@ public class CounterView : MonoBehaviour
 
     public void DisplayCount()
     {
-        int count = _counter.Count;
-        _countView.text = count.ToString();
+        _countView.text = _counter.Count.ToString();
     }
 }

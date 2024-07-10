@@ -4,13 +4,13 @@ using System;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private float _waitInSeconds = 0.5f;
-
-    public int Count { get; private set; }
+    [SerializeField] private float _WaitInSeconds = 0.5f;
 
     private bool _isCounting = false;
 
     public event Action CountViewing;
+
+    public int Count { get; private set; }
 
     private void Update()
     {
@@ -20,19 +20,16 @@ public class Counter : MonoBehaviour
 
             if (_isCounting)
                 StartCoroutine(CountUp());
-            else
-                StopCoroutine(CountUp());
         }
-        
-        CountViewing?.Invoke();
     }
 
     private IEnumerator CountUp()
     {
         while (_isCounting)
         {
+            CountViewing?.Invoke();
             Count++;
-            yield return new WaitForSeconds(_waitInSeconds);
+            yield return new WaitForSeconds(_WaitInSeconds);
         }
     }
 }
