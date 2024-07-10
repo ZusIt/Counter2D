@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using UnityEngine.UIElements;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private float _WaitInSeconds = 0.5f;
+    private WaitForSeconds _waitTime = new WaitForSeconds(0.5f);
 
     private bool _isCounting = false;
 
@@ -29,7 +30,7 @@ public class Counter : MonoBehaviour
         {
             CountViewing?.Invoke();
             Count++;
-            yield return new WaitForSeconds(_WaitInSeconds);
+            yield return _waitTime;
         }
     }
 }
